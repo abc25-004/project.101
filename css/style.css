@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap');
 
 *{
     margin:0;
@@ -8,158 +8,177 @@
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#111827;
+    background:#07142b;
     color:white;
     overflow-x:hidden;
 }
 
-header{
-    background:#0f172a;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+/* NAVIGATION */
 
 nav{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:25px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 8%;
+    z-index:100;
 }
 
-.logo{
-    font-size:28px;
-    font-family:'Cinzel',serif;
-    color:#ff6ec7;
+.nav-logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    font-weight:700;
+    color:white;
 }
 
-.nav-links{
+nav ul{
     display:flex;
-    gap:25px;
     list-style:none;
+    gap:30px;
 }
 
-.nav-links a{
+nav ul li a{
     color:white;
     text-decoration:none;
     transition:0.3s;
 }
 
-.nav-links a:hover{
-    color:#00e5ff;
+nav ul li a:hover{
+    color:#ff8ed1;
 }
 
-.banner{
+/* HERO */
+
+.hero{
     position:relative;
+    height:100vh;
     width:100%;
-    height:80vh;
     overflow:hidden;
 }
 
-.slide{
+.slides{
     position:absolute;
     width:100%;
     height:100%;
+}
+
+.slides img{
+    width:100%;
+    height:100%;
     object-fit:cover;
-    opacity:0;
-    transition:opacity 1s ease-in-out;
 }
 
-.slide.active{
-    opacity:1;
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+    z-index:2;
 }
 
-.banner-content{
+.hero-content{
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
     text-align:center;
-    z-index:10;
+    z-index:3;
 }
 
-.banner-content h1{
-    font-size:4rem;
-    font-family:'Cinzel',serif;
-    color:white;
-    text-shadow:0 0 15px #ff6ec7;
+.hero-content h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:5rem;
+    letter-spacing:3px;
+    margin-bottom:15px;
 }
 
-.banner-content p{
-    margin-top:15px;
+.hero-content p{
     font-size:1.2rem;
 }
 
+/* WELCOME SECTION */
+
+.welcome-section{
+    padding:100px 10%;
+}
+
+.welcome-box{
+    max-width:1100px;
+    margin:auto;
+    background:#10213d;
+    padding:50px;
+    border-radius:20px;
+}
+
+.welcome-box h2{
+    font-size:2.5rem;
+    margin-bottom:25px;
+    color:#ffb3e6;
+}
+
+.welcome-box p{
+    line-height:1.9;
+    margin-bottom:25px;
+    font-size:1.05rem;
+}
+
+/* GENERAL SECTIONS */
+
 section{
-    padding:70px 10%;
+    padding:100px 10%;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:30px;
-    font-size:2rem;
-    color:#ff6ec7;
+h2{
+    margin-bottom:25px;
 }
 
-.card{
-    background:#1e293b;
-    padding:25px;
-    border-radius:15px;
-    transition:0.4s;
+p{
+    line-height:1.8;
 }
 
-.card:hover{
-    transform:translateY(-10px);
+/* IMAGE SECTIONS */
+
+img{
+    max-width:100%;
+    display:block;
 }
 
-.fade{
-    opacity:0;
-    transform:translateY(50px);
-    transition:1s;
-}
+/* MOBILE */
 
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
+@media (max-width:768px){
 
-.menu-btn{
-    display:none;
-    font-size:30px;
-    cursor:pointer;
-}
-
-@media(max-width:768px){
-
-    .menu-btn{
-        display:block;
-    }
-
-    .nav-links{
-        position:absolute;
-        top:70px;
-        left:-100%;
-        width:100%;
-        background:#0f172a;
+    nav{
         flex-direction:column;
-        text-align:center;
+        gap:15px;
         padding:20px;
-        transition:0.5s;
     }
 
-    .nav-links.active{
-        left:0;
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
     }
 
-    .banner-content h1{
-        font-size:2.5rem;
+    .hero-content h1{
+        font-size:3rem;
     }
 
-    .banner-content p{
+    .hero-content p{
         font-size:1rem;
     }
 
+    .welcome-box{
+        padding:30px;
+    }
+
+    .welcome-box h2{
+        font-size:2rem;
+    }
+
     section{
-        padding:50px 7%;
+        padding:70px 6%;
     }
 }
