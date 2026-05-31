@@ -1,1 +1,213 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Project 101</title> <link rel="stylesheet" href="css/style.css"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet"> </head> <body> <!-- NAVIGATION --> <nav> <div class="nav-logo"> PROJECT 101 </div> <ul> <li><a href="index.html">Home</a></li> <li><a href="girlgroup.html">Girl Groups</a></li> <li><a href="prepare.html">How To Prepare</a></li> <li><a href="memberlife.html">Life As A Member</a></li> <li><a href="team.html">Teamwork</a></li> <li><a href="goals.html">Future Goals</a></li> <li><a href="members.html">Members</a></li> </ul> </nav> <!-- HERO SECTION --> <section class="hero"> <!-- SLIDES --> <div class="slides fade"> <img src="images/banner1.jpg"> </div> <div class="slides fade"> <img src="images/banner2.jpg"> </div> <div class="slides fade"> <img src="images/banner3.jpg"> </div> <div class="slides fade"> <img src="images/banner4.jpg"> </div> <div class="slides fade"> <img src="images/banner5.jpg"> </div> <!-- OVERLAY --> <div class="overlay"></div> <!-- HERO TEXT --> <div class="hero-content"> <h1>PROJECT 101</h1> <p> Welcome to the beginning of a new chapter. </p> </div> </section> <!-- WELCOME SECTION --> <section class="welcome-section"> <div class="welcome-box"> <h2> Welcome To Project 101 </h2> <p> Congratulations on becoming part of Project 101. This website is designed to act as your introduction and guide into the world of this group. Here, you will discover the importance of teamwork, creativity, dedication, communication, and growth while gaining insight into the experiences and responsibilities that come with being part of a girl group. </p> <p> Throughout this journey, members will experience dance practices, vocal lessons, performances, content creation, songwriting, and unforgettable memories together. We hope every member continues to work hard, support one another, and grow both individually and as a team while building something meaningful together. </p> </div> </section> <script src="js/script.js"></script> </body> </html>    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 101</title>
+
+<style>
+/* ===================== RESET ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f0f1a;
+    color: white;
+    line-height: 1.6;
+}
+
+/* ===================== NAV ===================== */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff4da6;
+}
+
+/* ===================== BANNER ===================== */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.banner img.active {
+    opacity: 1;
+}
+
+/* CENTER TEXT */
+.banner-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 2;
+}
+
+.banner-text h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+/* ===================== SECTIONS ===================== */
+section {
+    padding: 80px 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* ===================== GIRL GROUPS ===================== */
+.group-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.group-card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.group-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner {
+        height: 45vh;
+    }
+
+    .banner-text h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAV ================= -->
+<nav>
+    <div><strong>Project 101</strong></div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#groups">Girl Groups</a></li>
+    </ul>
+</nav>
+
+<!-- ================= BANNER ================= -->
+<div class="banner">
+
+    <img src="img1.jpg" class="active">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+
+    <div class="banner-text">
+        <h1>Project Runner 1</h1>
+        <p>Welcome to the official site</p>
+    </div>
+
+</div>
+
+<!-- ================= GIRL GROUPS ================= -->
+<section id="groups">
+    <h2>Inspirational Girl Groups</h2>
+
+    <div class="group-container">
+
+        <div class="group-card">
+            <img src="twice.jpg">
+            <h3>TWICE</h3>
+            <p>TWICE is a South Korean girl group formed by JYP Entertainment...</p>
+        </div>
+
+        <div class="group-card">
+            <img src="blackpink.jpg">
+            <h3>BLACKPINK</h3>
+            <p>BLACKPINK is known globally for their powerful performances...</p>
+        </div>
+
+        <div class="group-card">
+            <img src="snsd.jpg">
+            <h3>Girls’ Generation</h3>
+            <p>One of the most influential K-pop girl groups of all time...</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= JS ================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const slides = document.querySelectorAll(".banner img");
+    let index = 0;
+
+    function showSlide() {
+        slides.forEach(img => img.classList.remove("active"));
+        slides[index].classList.add("active");
+
+        index = (index + 1) % slides.length;
+    }
+
+    showSlide();
+    setInterval(showSlide, 3000);
+});
+</script>
+
+</body>
+</html>  
