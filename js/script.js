@@ -1,50 +1,15 @@
-// Banner Slider
+let index = 0;
+const slides = document.querySelectorAll(".banner img");
 
-let slides = document.querySelectorAll(".slide");
-let current = 0;
+function showSlide() {
+    slides.forEach(img => img.classList.remove("active"));
+    slides[index].classList.add("active");
 
-function nextSlide() {
-
-    slides[current].classList.remove("active");
-
-    current++;
-
-    if(current >= slides.length){
-        current = 0;
+    index++;
+    if (index >= slides.length) {
+        index = 0;
     }
-
-    slides[current].classList.add("active");
 }
 
-setInterval(nextSlide, 4000);
-
-
-// Fade In Animation
-
-const faders = document.querySelectorAll(".fade");
-
-window.addEventListener("scroll", () => {
-
-    faders.forEach(item => {
-
-        const top = item.getBoundingClientRect().top;
-
-        if(top < window.innerHeight - 100){
-            item.classList.add("show");
-        }
-
-    });
-
-});
-
-
-// Mobile Menu
-
-const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
-
-menuBtn.addEventListener("click", () => {
-
-    navLinks.classList.toggle("active");
-
-});
+showSlide();
+setInterval(showSlide, 3000);
